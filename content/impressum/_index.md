@@ -3,7 +3,7 @@ title: "Impressum"
 ---
 
 **meerweb**
-c/o Meerwert Kuonen
+℅ Meerwert Kuonen
 Furkastrasse 639
 3985 Münster
 
