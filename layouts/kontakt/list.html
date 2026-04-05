@@ -19,9 +19,11 @@
       <p class="kontakt-note">Kein Telefon. Keine Terminbuchung. Eine E-Mail reicht.</p>
     </div>
 
-    <form class="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="kontakt">
-      <p class="hidden"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+    <form class="kontakt-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="064303cd-3ccd-4dc8-ab9a-a69b4c0a6db3">
+      <input type="hidden" name="subject" value="Neue Anfrage via meerweb.ch">
+      <input type="hidden" name="redirect" value="https://meerweb.ch/kontakt/?danke=1">
+      <input type="checkbox" name="botcheck" style="display:none">
 
       <div class="form-group">
         <label for="name">Name</label>
