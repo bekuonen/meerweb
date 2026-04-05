@@ -1,0 +1,93 @@
+backend:
+  name: github
+  repo: DEIN-GITHUB-USERNAME/meerweb
+  branch: main
+
+media_folder: static/img
+public_folder: /img
+
+locale: de
+
+collections:
+  - name: "startseite"
+    label: "Startseite"
+    files:
+      - name: "startseite"
+        label: "Startseite"
+        file: "content/_index.md"
+        fields:
+          - { label: "Hero Titel", name: "hero_title", widget: "string" }
+          - { label: "Hero Untertitel", name: "hero_sub", widget: "text" }
+          - { label: "CTA Text", name: "cta_text", widget: "string" }
+          - label: "Problem/Lösung Abschnitt"
+            name: "problem"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Pakete (Übersicht)"
+            name: "pakete"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Untertitel", name: "sub", widget: "string" }
+
+  - name: "angebot"
+    label: "Angebot"
+    files:
+      - name: "angebot"
+        label: "Angebot Seite"
+        file: "content/angebot/_index.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Einleitung", name: "intro", widget: "text" }
+          - label: "Pakete"
+            name: "pakete"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Preis", name: "preis", widget: "string" }
+              - { label: "Preishinweis", name: "preishinweis", widget: "string", default: "einmalig" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - label: "Leistungen"
+                name: "leistungen"
+                widget: "list"
+                field: { label: "Leistung", name: "item", widget: "string" }
+          - label: "Prozess"
+            name: "prozess"
+            widget: "list"
+            fields:
+              - { label: "Schritt", name: "schritt", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Frage", name: "frage", widget: "string" }
+              - { label: "Antwort", name: "antwort", widget: "text" }
+
+  - name: "referenzen"
+    label: "Referenzen"
+    folder: "content/referenzen"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Kunde", name: "title", widget: "string" }
+      - { label: "Branche", name: "branche", widget: "string" }
+      - { label: "Paket", name: "paket", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "text" }
+      - { label: "Bild", name: "bild", widget: "image", required: false }
+      - { label: "Beispielprojekt", name: "beispiel", widget: "boolean", default: false }
+      - { label: "Reihenfolge", name: "weight", widget: "number", default: 1 }
+
+  - name: "kontakt"
+    label: "Kontakt"
+    files:
+      - name: "kontakt"
+        label: "Kontakt Seite"
+        file: "content/kontakt/_index.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Text", name: "text", widget: "text" }
+          - { label: "E-Mail", name: "email", widget: "string" }

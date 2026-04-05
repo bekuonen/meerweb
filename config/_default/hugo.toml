@@ -1,0 +1,24 @@
+baseURL = "https://meerweb.ch"
+languageCode = "de-CH"
+title = "meerweb"
+theme = ""
+
+[params]
+  description = "Websites für kleine Unternehmen. Schnell, günstig, ohne Folgekosten."
+  email = "hallo@meerweb.ch"
+  tagline = "Websites die wirken."
+  subline = "Statische Sites für kleine Unternehmen in der Schweiz. Schnell, sicher, ohne monatliche Kosten."
+
+[menu]
+  [[menu.main]]
+    name = "Angebot"
+    url = "/angebot/"
+    weight = 1
+  [[menu.main]]
+    name = "Referenzen"
+    url = "/referenzen/"
+    weight = 2
+  [[menu.main]]
+    name = "Kontakt"
+    url = "/kontakt/"
+    weight = 3

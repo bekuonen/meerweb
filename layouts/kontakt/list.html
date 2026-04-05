@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="label">Kontakt</p>
+    <h1>{{ .Params.title | default "Schreib mir." }}</h1>
+    <p class="page-hero__sub">{{ .Params.text | default "Kurze Nachricht genügt. Ich melde mich in der Regel innerhalb von 24 Stunden." }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container kontakt-grid">
+
+    <div class="kontakt-info">
+      <p class="label">Direkt</p>
+      <a href="mailto:{{ .Params.email | default .Site.Params.email }}" class="kontakt-email">
+        {{ .Params.email | default .Site.Params.email }}
+      </a>
+      <p class="kontakt-note">Kein Telefon. Keine Terminbuchung. Eine E-Mail reicht.</p>
+    </div>
+
+    <form class="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="kontakt">
+      <p class="hidden"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht">Nachricht</label>
+        <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary">Nachricht senden</button>
+    </form>
+
+  </div>
+</section>
+
+{{ end }}

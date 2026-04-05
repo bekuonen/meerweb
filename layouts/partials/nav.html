@@ -1,0 +1,13 @@
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">meer<span>web</span></a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <button class="nav__burger" aria-label="Menu öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

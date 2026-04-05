@@ -1,0 +1,119 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="hero__label">meerweb · Websites für die Schweiz</p>
+    <h1 class="hero__title">{{ .Params.hero_title | default "Websites die wirken." }}</h1>
+    <p class="hero__sub">{{ .Params.hero_sub | default "Statische Sites für kleine Unternehmen. Schnell, sicher, ohne monatliche Kosten." }}</p>
+    <a href="/kontakt/" class="btn btn--primary">{{ .Params.cta_text | default "Gespräch anfragen" }}</a>
+  </div>
+</section>
+
+<!-- PROBLEM / LÖSUNG -->
+<section class="section section--subtle">
+  <div class="container">
+    <div class="split">
+      <div class="split__text">
+        <p class="label">Warum meerweb</p>
+        <h2>{{ (.Params.problem).title | default "Keine Plugins. Keine Sicherheitslücken. Keine Überraschungen." }}</h2>
+        <p>{{ (.Params.problem).text | default "WordPress-Sites brauchen Updates, Plugins und Wartung. Statische Sites nicht. Sie laden schneller, sind sicherer und kosten monatlich nichts – ausser einer Domain." }}</p>
+      </div>
+      <div class="split__list">
+        <ul class="checkmark-list">
+          <li>Keine Plattformabhängigkeit</li>
+          <li>Keine monatlichen Hostingkosten</li>
+          <li>Ladezeiten unter 1 Sekunde</li>
+          <li>Kein Lock-in – Code gehört dir</li>
+          <li>Eigene Fotos statt Stock</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKETE ÜBERSICHT -->
+<section class="section">
+  <div class="container">
+    <p class="label">{{ (.Params.pakete).title | default "Angebot" }}</p>
+    <h2>{{ (.Params.pakete).sub | default "Klare Pakete. Feste Preise." }}</h2>
+    <div class="cards">
+
+      <div class="card">
+        <p class="card__label">Paket</p>
+        <h3 class="card__title">Auftritt</h3>
+        <p class="card__price">CHF 2'200 <span>einmalig</span></p>
+        <ul class="card__list">
+          <li>bis 5 Seiten</li>
+          <li>Texte & Setup</li>
+          <li>Einführung inklusive</li>
+        </ul>
+        <a href="/angebot/" class="btn btn--outline">Details</a>
+      </div>
+
+      <div class="card card--featured">
+        <p class="card__label">Paket</p>
+        <h3 class="card__title">Präsenz</h3>
+        <p class="card__price">CHF 3'300 <span>einmalig</span></p>
+        <ul class="card__list">
+          <li>bis 10 Seiten</li>
+          <li>Texte & Setup</li>
+          <li>Einführung inklusive</li>
+        </ul>
+        <a href="/angebot/" class="btn btn--primary">Details</a>
+      </div>
+
+      <div class="card">
+        <p class="card__label">Laufend</p>
+        <h3 class="card__title">Betreuung</h3>
+        <p class="card__price">ab CHF 120 <span>/ Monat</span></p>
+        <ul class="card__list">
+          <li>Anpassungen & Updates</li>
+          <li>Feste Ansprechperson</li>
+          <li>Monatlich kündbar</li>
+        </ul>
+        <a href="/angebot/" class="btn btn--outline">Details</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section class="section section--subtle">
+  <div class="container">
+    <p class="label">Referenzen</p>
+    <h2>Beispielprojekte</h2>
+    <div class="ref-grid">
+      {{ range (where .Site.RegularPages "Section" "referenzen") }}
+      <div class="ref-card">
+        {{ if .Params.bild }}
+          <div class="ref-card__img">
+            <img src="{{ .Params.bild }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+        {{ else }}
+          <div class="ref-card__img ref-card__img--placeholder"></div>
+        {{ end }}
+        <div class="ref-card__body">
+          {{ if .Params.beispiel }}<span class="badge">Beispielprojekt</span>{{ end }}
+          <h3>{{ .Title }}</h3>
+          <p class="ref-card__meta">{{ .Params.branche }} · {{ .Params.paket }}</p>
+          <p>{{ .Params.description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <a href="/referenzen/" class="btn btn--outline" style="margin-top: 2rem;">Alle Referenzen</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container cta-section__inner">
+    <h2>Bereit für einen Auftritt ohne Kompromisse?</h2>
+    <p>Kurzes Gespräch genügt. Kein Verkaufsdruck.</p>
+    <a href="/kontakt/" class="btn btn--primary">Kontakt aufnehmen</a>
+  </div>
+</section>
+
+{{ end }}

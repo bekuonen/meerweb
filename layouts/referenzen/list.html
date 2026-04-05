@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="label">Referenzen</p>
+    <h1>Projekte</h1>
+    <p class="page-hero__sub">Echte Auftritte für echte Unternehmen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="ref-grid ref-grid--full">
+      {{ range (where .Site.RegularPages "Section" "referenzen") }}
+      <div class="ref-card">
+        {{ if .Params.bild }}
+          <div class="ref-card__img">
+            <img src="{{ .Params.bild }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+        {{ else }}
+          <div class="ref-card__img ref-card__img--placeholder"></div>
+        {{ end }}
+        <div class="ref-card__body">
+          {{ if .Params.beispiel }}<span class="badge">Beispielprojekt</span>{{ end }}
+          <h2>{{ .Title }}</h2>
+          <p class="ref-card__meta">{{ .Params.branche }} · {{ .Params.paket }}</p>
+          <p>{{ .Params.description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

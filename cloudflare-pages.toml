@@ -1,0 +1,17 @@
+# Cloudflare Pages Build-Konfiguration
+# Diese Datei ist nur zur Dokumentation — die Einstellungen
+# werden direkt im Cloudflare Dashboard eingegeben.
+#
+# Build-Befehl:     hugo
+# Output-Ordner:    public
+# Root-Verzeichnis: (leer lassen)
+#
+# Umgebungsvariablen (unter "Environment Variables" eintragen):
+#   HUGO_VERSION = 0.120.0
+
+[build]
+command = "hugo"
+publish = "public"
+
+[build.environment]
+HUGO_VERSION = "0.120.0"

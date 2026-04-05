@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="label">Angebot</p>
+    <h1>{{ .Params.title | default "Klare Pakete. Feste Preise." }}</h1>
+    <p class="page-hero__sub">{{ .Params.intro | default "Kein Stundensatz-Roulette. Du weisst vor dem Start, was es kostet." }}</p>
+  </div>
+</section>
+
+<!-- PAKETE -->
+<section class="section">
+  <div class="container">
+    <div class="cards cards--full">
+      {{ range .Params.pakete }}
+      <div class="card card--horizontal">
+        <div class="card__head">
+          <p class="card__label">Paket</p>
+          <h2 class="card__title">{{ .name }}</h2>
+          <p class="card__price">{{ .preis }} <span>{{ .preishinweis }}</span></p>
+        </div>
+        <div class="card__body">
+          <p>{{ .beschreibung }}</p>
+          <ul class="card__list">
+            {{ range .leistungen }}
+            <li>{{ .item }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section class="section section--subtle">
+  <div class="container">
+    <p class="label">Ablauf</p>
+    <h2>So läuft ein Projekt ab</h2>
+    <div class="prozess">
+      {{ range .Params.prozess }}
+      <div class="prozess__step">
+        <span class="prozess__nr">{{ .schritt }}</span>
+        <h3>{{ .titel }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <p class="label">FAQ</p>
+    <h2>Häufige Fragen</h2>
+    <div class="faq">
+      {{ range .Params.faq }}
+      <details class="faq__item">
+        <summary class="faq__frage">{{ .frage }}</summary>
+        <p class="faq__antwort">{{ .antwort }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container cta-section__inner">
+    <h2>Fragen? Einfach melden.</h2>
+    <p>Kein Formular-Marathon. Eine E-Mail genügt.</p>
+    <a href="/kontakt/" class="btn btn--primary">Kontakt aufnehmen</a>
+  </div>
+</section>
+
+{{ end }}
