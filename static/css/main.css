@@ -556,3 +556,47 @@ details[open] .faq__frage::after { content: "−"; }
   }
   h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
 }
+
+/* ============================================
+   PROSE — Impressum / Datenschutz
+   ============================================ */
+.prose {
+  max-width: 680px;
+}
+.prose h2 {
+  font-family: var(--font-head);
+  font-size: var(--size-xl);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+.prose h3 {
+  font-size: var(--size-md);
+  font-weight: 500;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+.prose p {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+.prose li {
+  margin-bottom: 0.25rem;
+  line-height: 1.7;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid #e0ddd8;
+  margin: var(--space-lg) 0;
+}
+.prose strong {
+  font-weight: 600;
+}
