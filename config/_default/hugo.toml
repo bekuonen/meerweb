@@ -1,7 +1,6 @@
 baseURL = "https://meerweb.ch"
 languageCode = "de-CH"
 title = "meerweb"
-theme = ""
 
 [params]
   description = "Websites für kleine Unternehmen. Schnell, günstig, ohne Folgekosten."
