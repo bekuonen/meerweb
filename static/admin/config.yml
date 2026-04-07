@@ -1,7 +1,8 @@
 backend:
   name: github
-  repo: DEIN-GITHUB-USERNAME/meerweb
+  repo: bekuonen/meerweb
   branch: main
+  base_url: https://sveltia-cms-auth.bekuonen.workers.dev
 
 media_folder: static/img
 public_folder: /img
