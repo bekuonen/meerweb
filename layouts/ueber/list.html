@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="label">Über mich</p>
+    <h1>{{ .Params.intro | default "Ich bin Bernhard, Webentwickler aus Luzern." }}</h1>
+    <p class="page-hero__sub">{{ .Params.text | default "" }}</p>
+  </div>
+</section>
+
+<!-- ARBEITSWEISE -->
+<section class="section section--subtle">
+  <div class="container">
+    <div class="split">
+      <div class="split__text">
+        <p class="label">Arbeitsweise</p>
+        <h2>{{ (.Params.arbeitsweise).title | default "Wie ich arbeite" }}</h2>
+        <p>{{ (.Params.arbeitsweise).text | default "" }}</p>
+      </div>
+      <div class="split__list">
+        <ul class="checkmark-list">
+          {{ range (.Params.werte).punkte }}
+          <li>{{ .item }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEBENPROJEKTE -->
+<section class="section">
+  <div class="container">
+    <p class="label">Weitere Projekte</p>
+    <p>{{ (.Params.nebenbei).text | default "" }}</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container cta-section__inner">
+    <h2>{{ (.Params.cta).text | default "Klingt passend? Ich freue mich auf eine kurze Nachricht." }}</h2>
+    <a href="{{ (.Params.cta).link | default "/kontakt/" }}" class="btn btn--primary">{{ (.Params.cta).label | default "Kontakt aufnehmen" }}</a>
+  </div>
+</section>
+
+{{ end }}
