@@ -9,6 +9,7 @@ vorteile:
   - item: "Keine monatlichen Hostingkosten"
   - item: "Kein Abo, kein Lock-in"
   - item: "Ladezeiten unter einer Sekunde"
+  - item: "Texte inklusive — auf Wunsch vollständig übernommen"
   - item: "Dein Code, deine Daten, dein Eigentum"
   - item: "Echte Fotos statt Stockbilder"
 pakete:
