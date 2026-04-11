@@ -600,3 +600,5 @@ details[open] .faq__frage::after { content: "−"; }
 .prose strong {
   font-weight: 600;
 }
+
+.badge--featured { background: var(--color-accent); color: #fff; }
