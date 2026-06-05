@@ -2,7 +2,7 @@ backend:
   name: github
   repo: bekuonen/meerweb
   branch: main
-  base_url: https://sveltia-cms-auth.bekuonen.workers.dev
+  base_url: https://sveltia-auth.bekuonen.workers.dev
 
 media_folder: static/img
 public_folder: /img
