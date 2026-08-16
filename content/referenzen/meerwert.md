@@ -1,7 +1,7 @@
 ---
 title: "Meerwert.ch"
 branche: "Laufbahnberatung"
-paket: "Auftritt"
+paket: "Persönliche Website"
 description: "Biografie- und Laufbahnberatung. Website mit Fokus auf Vertrauen, Klarheit und persönlicher Ansprache."
 website: "https://meerwert.ch"
 bild: "/img/referenzen/meerwert.jpg"
