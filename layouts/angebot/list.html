@@ -26,10 +26,31 @@
             <li>{{ .item }}</li>
             {{ end }}
           </ul>
+          {{ if .erweiterung }}<p class="card__note">{{ .erweiterung }}</p>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ with .Params.betreuung }}
+      <div class="card card--horizontal">
+        <div class="card__head">
+          <p class="card__label">Laufend</p>
+          <h2 class="card__title">{{ .name }}</h2>
+          <p class="card__price">{{ .preis }} <span>{{ .preishinweis }}</span></p>
+        </div>
+        <div class="card__body">
+          <p>{{ .beschreibung }}</p>
+          <ul class="card__list">
+            {{ range .leistungen }}
+            <li>{{ .item }}</li>
+            {{ end }}
+          </ul>
         </div>
       </div>
       {{ end }}
     </div>
+
+    {{ if .Params.rabatthinweis }}<p class="card__note" style="margin-top: var(--space-md);">{{ .Params.rabatthinweis }}</p>{{ end }}
   </div>
 </section>
 

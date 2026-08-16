@@ -304,6 +304,11 @@ a:hover { color: var(--color-accent-dark); }
   content: "→ ";
   color: var(--color-accent);
 }
+.card__note {
+  font-size: var(--size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
 
 /* Horizontale Cards (Angebot-Seite) */
 .cards--full { grid-template-columns: 1fr; }

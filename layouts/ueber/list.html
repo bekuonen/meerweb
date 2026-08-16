@@ -9,7 +9,7 @@
   </div>
 </section>
 
-<!-- ARBEITSWEISE -->
+<!-- ARBEITSWEISE + WERTE -->
 <section class="section section--subtle">
   <div class="container">
     <div class="split">
@@ -19,6 +19,7 @@
         <p>{{ (.Params.arbeitsweise).text | default "" }}</p>
       </div>
       <div class="split__list">
+        <p class="label">{{ (.Params.werte).title | default "Was mir wichtig ist" }}</p>
         <ul class="checkmark-list">
           {{ range (.Params.werte).punkte }}
           <li>{{ .item }}</li>
@@ -29,8 +30,16 @@
   </div>
 </section>
 
-<!-- NEBENPROJEKTE -->
+<!-- KOMPETENZEN -->
 <section class="section">
+  <div class="container">
+    <p class="label">{{ (.Params.kompetenzen).title | default "Was ich mitbringe" }}</p>
+    <p>{{ (.Params.kompetenzen).text | default "" }}</p>
+  </div>
+</section>
+
+<!-- NEBENPROJEKTE -->
+<section class="section section--subtle">
   <div class="container">
     <p class="label">Weitere Projekte</p>
     <p>{{ (.Params.nebenbei).text | default "" }}</p>
