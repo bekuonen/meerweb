@@ -2,7 +2,7 @@
 title: "Über mich"
 name: "Bernhard Kuonen"
 ort: "Luzern"
-intro: "Ich bin Bernhard aus Luzern."
+intro: "Ich heisse Bernhard Kuonen."
 text: |
   Aus Ideen und Konzepten entwickle ich klare, zeitgemässe Websites. Dabei nutze ich auch die Möglichkeiten der KI – bewusst, transparent und unter meiner Verantwortung.
 
