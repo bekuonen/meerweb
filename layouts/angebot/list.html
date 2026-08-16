@@ -8,8 +8,41 @@
   </div>
 </section>
 
-<!-- PAKETE -->
+<!-- ÜBERSICHT -->
+{{ if .Params.uebersicht }}
 <section class="section">
+  <div class="container">
+    <p class="label">Übersicht</p>
+    <h2>Welches Angebot passt?</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Angebot</th>
+            <th>Geeignet für</th>
+            <th>Umfang</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .Params.uebersicht }}
+          <tr>
+            <td>{{ .angebot }}</td>
+            <td>{{ .zielgruppe }}</td>
+            <td>{{ .umfang }}</td>
+            <td>{{ .preis }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    {{ if .Params.uebersicht_hinweis }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .Params.uebersicht_hinweis }}</p>{{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- PAKETE -->
+<section class="section section--subtle">
   <div class="container">
     <div class="cards cards--full">
       {{ range .Params.pakete }}
@@ -32,63 +65,37 @@
         </div>
       </div>
       {{ end }}
-
-      {{ with .Params.betreuung }}
-      <div class="card card--horizontal">
-        <div class="card__head">
-          <p class="card__label">Laufend</p>
-          <h2 class="card__title">{{ .name }}</h2>
-          <p class="card__price">{{ .preis }} <span>{{ .preishinweis }}</span></p>
-        </div>
-        <div class="card__body">
-          <p>{{ .beschreibung }}</p>
-          <ul class="card__list">
-            {{ range .leistungen }}
-            <li>{{ .item }}</li>
-            {{ end }}
-          </ul>
-          {{ if .nachtext }}<p class="card__note">{{ .nachtext }}</p>{{ end }}
-        </div>
-      </div>
-      {{ end }}
     </div>
 
     {{ if .Params.rabatthinweis }}<p class="card__note" style="margin-top: var(--space-md);">{{ .Params.rabatthinweis }}</p>{{ end }}
   </div>
 </section>
 
-<!-- PAKETE POLITIK -->
-{{ if .Params.polit_pakete }}
+<!-- IN ALLEN PAKETEN ENTHALTEN -->
+{{ with .Params.enthalten }}
+<section class="section">
+  <div class="container">
+    <p class="label">Basis</p>
+    <h2>{{ .titel | default "In allen Paketen enthalten" }}</h2>
+    <div class="card" style="margin-top: var(--space-md);">
+      <ul class="card__list card__list--grid">
+        {{ range .leistungen }}
+        <li>{{ .item }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- BETREUUNG NACH DEM START -->
+{{ if .Params.betreuung }}
 <section class="section section--subtle">
   <div class="container">
-    <p class="label">Spezialisiert</p>
-    <h2>Websites für politische Mandate</h2>
-    <div class="cards cards--full" style="margin-top: var(--space-md);">
-      {{ range .Params.polit_pakete }}
-      <div class="card card--horizontal">
-        <div class="card__head">
-          <p class="card__label">Paket{{ with .label }} {{ . }}{{ end }}</p>
-          <h3 class="card__title">{{ .name }}</h3>
-          <p class="card__price">{{ if .preisprefix }}<span>{{ .preisprefix }}</span> {{ end }}{{ .preis }} <span>{{ .preishinweis }}</span></p>
-        </div>
-        <div class="card__body">
-          {{ if .tagline }}<p><strong>{{ .tagline }}</strong></p>{{ end }}
-          <p>{{ .beschreibung }}</p>
-          <ul class="card__list">
-            {{ range .leistungen }}
-            <li>{{ .item }}</li>
-            {{ end }}
-          </ul>
-          {{ if .nachtext }}<p>{{ .nachtext }}</p>{{ end }}
-          {{ if .erweiterung }}<p class="card__note">{{ .erweiterung }}</p>{{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-
-    {{ if .Params.polit_wartung }}
-    <div class="cards cards--full" style="margin-top: var(--space-md);">
-      {{ range .Params.polit_wartung.tiers }}
+    <p class="label">Laufend</p>
+    <h2>Betreuung nach dem Start</h2>
+    <div class="cards" style="margin-top: var(--space-md);">
+      {{ range .Params.betreuung.tiers }}
       <div class="card">
         <p class="card__label">Laufend</p>
         <h3 class="card__title">{{ .name }}</h3>
@@ -103,8 +110,29 @@
       </div>
       {{ end }}
     </div>
-    {{ if .Params.polit_wartung.gesamt_hinweis }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .Params.polit_wartung.gesamt_hinweis }}</p>{{ end }}
+    {{ if .Params.betreuung.gesamt_hinweis }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .Params.betreuung.gesamt_hinweis }}</p>{{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- EXTERNE KOSTEN -->
+{{ with .Params.externe_kosten }}
+<section class="section">
+  <div class="container">
+    <p class="label">Transparenz</p>
+    <h2>{{ .titel | default "Externe Kosten" }}</h2>
+    <p style="margin-top: var(--space-sm);">{{ .text }}</p>
+    {{ if .posten }}
+    {{ if .hinweis }}<p>{{ .hinweis }}</p>{{ end }}
+    <div class="card" style="margin-top: var(--space-sm);">
+      <ul class="card__list card__list--grid">
+        {{ range .posten }}
+        <li>{{ .item }}</li>
+        {{ end }}
+      </ul>
+    </div>
     {{ end }}
+    {{ if .nachtext }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .nachtext }}</p>{{ end }}
   </div>
 </section>
 {{ end }}
@@ -145,9 +173,9 @@
 <!-- CTA -->
 <section class="section cta-section">
   <div class="container cta-section__inner">
-    <h2>Fragen? Einfach melden.</h2>
-    <p>Kein Formular-Marathon. Eine E-Mail genügt.</p>
-    <a href="/kontakt/" class="btn btn--primary">Kontakt aufnehmen</a>
+    <h2>Nicht sicher, welches Angebot passt?</h2>
+    <p>Schreib mir kurz, worum es geht — eine E-Mail genügt.</p>
+    <a href="/kontakt/" class="btn btn--primary">Projekt besprechen</a>
   </div>
 </section>
 
