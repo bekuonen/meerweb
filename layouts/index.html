@@ -99,6 +99,9 @@
           <h3>{{ .Title }}</h3>
           <p class="ref-card__meta">{{ .Params.branche }} · {{ .Params.paket }}</p>
           <p>{{ .Params.description }}</p>
+          {{ if .Params.website }}
+            <p><a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer">Website ansehen ↗</a></p>
+          {{ end }}
         </div>
       </div>
       {{ end }}
