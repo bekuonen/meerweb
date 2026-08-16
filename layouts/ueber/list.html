@@ -5,7 +5,7 @@
   <div class="container">
     <p class="label">Über mich</p>
     <h1>{{ .Params.intro | default "Ich bin Bernhard, Webentwickler aus Luzern." }}</h1>
-    <div class="page-hero__sub prose">{{ .Params.text | markdownify }}</div>
+    <div class="page-hero__sub prose prose--wide">{{ .Params.text | markdownify }}</div>
   </div>
 </section>
 
@@ -34,7 +34,7 @@
 <section class="section">
   <div class="container">
     <p class="label">{{ (.Params.kompetenzen).title | default "Was ich mitbringe" }}</p>
-    <div class="prose">{{ (.Params.kompetenzen).text | markdownify }}</div>
+    <div class="prose prose--wide">{{ (.Params.kompetenzen).text | markdownify }}</div>
   </div>
 </section>
 

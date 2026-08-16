@@ -207,8 +207,14 @@ a:hover { color: var(--color-accent-dark); }
 }
 .page-hero .label { margin-bottom: var(--space-xs); }
 .page-hero h1 { margin-bottom: var(--space-sm); }
-.page-hero__sub {
+.page-hero__sub.prose {
   font-size: var(--size-md);
+}
+.prose.prose--wide {
+  max-width: none;
+}
+.prose--wide p {
+  max-width: none;
 }
 
 /* ── SPLIT ── */
