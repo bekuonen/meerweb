@@ -209,7 +209,6 @@ a:hover { color: var(--color-accent-dark); }
 .page-hero h1 { margin-bottom: var(--space-sm); }
 .page-hero__sub {
   font-size: var(--size-md);
-  max-width: 52ch;
 }
 
 /* ── SPLIT ── */

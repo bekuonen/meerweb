@@ -5,7 +5,7 @@
   <div class="container">
     <p class="label">Über mich</p>
     <h1>{{ .Params.intro | default "Ich bin Bernhard, Webentwickler aus Luzern." }}</h1>
-    <div class="page-hero__sub">{{ .Params.text | markdownify }}</div>
+    <div class="page-hero__sub prose">{{ .Params.text | markdownify }}</div>
   </div>
 </section>
 
@@ -16,7 +16,7 @@
       <div class="split__text">
         <p class="label">Arbeitsweise</p>
         <h2>{{ (.Params.arbeitsweise).title | default "Wie ich arbeite" }}</h2>
-        <div>{{ (.Params.arbeitsweise).text | markdownify }}</div>
+        <div class="prose">{{ (.Params.arbeitsweise).text | markdownify }}</div>
       </div>
       <div class="split__list">
         <p class="label">{{ (.Params.werte).title | default "Was mir wichtig ist" }}</p>
@@ -34,7 +34,7 @@
 <section class="section">
   <div class="container">
     <p class="label">{{ (.Params.kompetenzen).title | default "Was ich mitbringe" }}</p>
-    <div>{{ (.Params.kompetenzen).text | markdownify }}</div>
+    <div class="prose">{{ (.Params.kompetenzen).text | markdownify }}</div>
   </div>
 </section>
 
