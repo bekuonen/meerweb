@@ -54,6 +54,19 @@
   </div>
 </section>
 
+<!-- POLIT-TEASER -->
+{{ with .Params.polit_teaser }}
+<section class="section section--subtle">
+  <div class="container">
+    <div class="card" style="max-width: 680px;">
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+      <a href="{{ .cta_link | default "/kontakt/" }}" class="btn btn--primary">{{ .cta_label | default "Kontakt aufnehmen" }} →</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 <!-- PROZESS -->
 <section class="section section--subtle">
   <div class="container">

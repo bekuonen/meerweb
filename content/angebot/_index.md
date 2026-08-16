@@ -31,6 +31,11 @@ pakete:
       - item: "Google Business Profile vorbereitet (auf Wunsch)"
       - item: "3 Monate Support nach Launch"
     erweiterung: "Ideal für alle, die regelmässig neue Inhalte zeigen wollen."
+polit_teaser:
+  title: "Spezialisiert: Websites für politische Mandate"
+  text: "Für Kantons- und Grossratsmitglieder sowie Kandidaturen entwickle ich ein eigenes Konzept — mit nachvollziehbarer Verknüpfung von Aussage und Handeln, nicht nur eine Visitenkarte. Aktuell in Vorbereitung. Interesse? Wir besprechen es unverbindlich."
+  cta_label: "Gespräch vereinbaren"
+  cta_link: "/kontakt/"
 betreuung:
   name: "Betreuung"
   preis: "ab CHF 120"
