@@ -16,7 +16,7 @@ uebersicht:
     preis: "CHF 3'300"
   - angebot: "Politische Website"
     zielgruppe: "Kandidierende, Parlamente und Exekutiven"
-    umfang: "modulares politisches Profil"
+    umfang: "bis 5 Themen, 10 Positionen"
     preis: "CHF 4'500"
 uebersicht_hinweis: "Alle Preise verstehen sich für den beschriebenen Leistungsumfang. Externe Gebühren und Leistungen Dritter sind nicht enthalten, sofern sie nicht ausdrücklich aufgeführt sind."
 pakete:
@@ -96,6 +96,26 @@ pakete:
       - item: "Eine gemeinsame Korrekturrunde"
     nachtext: "Du lieferst die politischen Inhalte und entscheidest, was veröffentlicht wird. Ich strukturiere sie, achte auf eine verständliche und konsistente Darstellung und setze sie technisch um. Werte, Aussagen und Positionen werden nicht an eine KI delegiert."
     erweiterung: "Aktuelles, Agenda, Leistungsbilanz, Medienbereich, Newsletter, Komitee und Wahlmodus sind als Erweiterungen möglich."
+polit_profil:
+  label: "Einstieg"
+  titel: "Politisches Profil statt vollständiger Website"
+  name: "Politisches Profil"
+  preis: "CHF 2'200"
+  preishinweis: "einmalig"
+  beschreibung: "Eine kompakte Website für Kandidierende und politisch engagierte Personen. Sie zeigt, wer du bist, wofür du stehst und was du erreichen möchtest. Struktur, Gestaltung und Texte entwickeln wir gemeinsam — klar, persönlich und ohne Auftritt von der Stange."
+  leistungen:
+    - item: "Bis zu 5 Inhaltsseiten, etwa Start, Person, Haltung und Themen, Kandidatur oder politische Arbeit sowie Kontakt"
+    - item: "Individuelle Struktur und Gestaltung passend zu deiner Person"
+    - item: "Texte im Dialog entwickelt und von dir inhaltlich freigegeben"
+    - item: "Optimiert für Smartphone, Tablet und Desktop"
+    - item: "Gut lesbar und barrierearm umgesetzt"
+    - item: "Kontaktformular mit direkter E-Mail-Zustellung"
+    - item: "Technische Grundlagen für die Auffindbarkeit nach Name, Amt und Kandidatur"
+    - item: "Datenschutzkonformes Hosting in der Schweiz, datenarm und ohne externe Tracker"
+    - item: "Übergabe der Quelldateien und Zugangsdaten"
+    - item: "1 Monat technische Unterstützung nach dem Start"
+  erweiterung: "Erweiterungen wie Agenda, Aktuelles, Medienbereich, politische Positionen, Leistungsbilanz oder Wahlmodus sind nach Aufwand möglich."
+  abgrenzung: "Für CHF 2'200 entsteht ein kompaktes politisches Profil — keine vollständige Politik-Website nach dem oben beschriebenen System. Wer mehr braucht als ein Profil, findet das umfassende Angebot unter «Politische Website» für CHF 4'500."
 enthalten:
   titel: "In allen Paketen enthalten"
   leistungen:
