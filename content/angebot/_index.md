@@ -14,7 +14,7 @@ pakete:
       - item: "Kontaktformular mit E-Mail-Weiterleitung"
       - item: "SSL-Zertifikat (HTTPS)"
       - item: "Grundlegende SEO-Struktur (Titel, Beschreibungen, Sitemap)"
-      - item: "Bereitstellung auf schnellem, europäischem Hosting"
+      - item: "Bereitstellung auf schnellem, zuverlässigem Hosting"
       - item: "Quelldateien und Zugangsdaten werden übergeben"
       - item: "1 Monat Support nach Launch"
     erweiterung: "Erweiterungen — z. B. weitere Seiten, Galerie oder Blog — sind nach Aufwand möglich."
