@@ -6,5 +6,5 @@ description: "Vollständige Beispielwebsite für eine fiktive Erstkandidatur nac
 website: "https://lenabrunmatt.ch"
 bild: "/img/referenzen/lena-brunmatt.jpg"
 beispiel: true
-weight: 5
+weight: 1
 ---

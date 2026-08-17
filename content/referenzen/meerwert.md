@@ -6,5 +6,5 @@ description: "Biografie- und Laufbahnberatung. Website mit Fokus auf Vertrauen, 
 website: "https://meerwert.ch"
 bild: "/img/referenzen/meerwert.jpg"
 beispiel: true
-weight: 2
+weight: 3
 ---

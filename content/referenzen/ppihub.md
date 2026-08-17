@@ -6,5 +6,5 @@ description: "Konzeptplattform, die Engagierte im Bereich Patient and Public Inv
 website: "https://www.ppihub.ch"
 bild: "/img/referenzen/ppihub.jpg"
 beispiel: true
-weight: 4
+weight: 5
 ---
