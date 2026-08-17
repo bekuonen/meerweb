@@ -14,7 +14,7 @@ arbeitsweise:
 
     Am Anfang steht das Gespräch. Ich höre zu, frage nach und versuche zu verstehen, was dich oder deine Organisation ausmacht. Gemeinsam klären wir, was die Website vermitteln soll, welche Inhalte wichtig sind und wie daraus ein stimmiger Auftritt entsteht.
 
-    Persönlich bin ich in Luzern und im Oberwallis für dich da, ansonsten per Telefon oder E-Mail.
+    Persönlich bin ich in Luzern und im Oberwallis für dich da. E-Mail ist der beste Weg zum Erstkontakt: hallo@meerweb.ch — Antwort innerhalb von 24 Stunden. Wenn du lieber kurz sprichst, ist ein Telefon-Erstgespräch möglich, Dienstag und Donnerstag von 9 bis 12 Uhr.
 werte:
   title: "Was mir wichtig ist"
   punkte:

@@ -28,6 +28,8 @@ Wenn Sie uns über das Kontaktformular schreiben, erheben wir:
 
 Diese Daten verwenden wir ausschliesslich zur Bearbeitung Ihrer Anfrage. Sie werden nicht an Dritte weitergegeben und nach Abschluss der Kommunikation gelöscht, spätestens nach 12 Monaten.
 
+Für die technische Übermittlung des Kontaktformulars wird der Dienst Web3Forms (USA) genutzt. Web3Forms leitet die eingegebenen Daten per E-Mail an uns weiter; nach Angaben des Anbieters werden Formulareingaben nicht dauerhaft gespeichert. Datenschutzrichtlinie: [web3forms.com/privacy](https://web3forms.com/privacy). Wer das Formular nicht nutzen möchte, kann uns direkt per E-Mail an [hallo@meerweb.ch](mailto:hallo@meerweb.ch) schreiben.
+
 ### Server-Logfiles
 Beim Besuch dieser Website werden durch Cloudflare automatisch technische Zugriffsdaten gespeichert:
 - IP-Adresse (anonymisiert)
@@ -48,6 +50,8 @@ Diese Website wird gehostet bei:
 **Cloudflare, Inc.**, 101 Townsend St, San Francisco, CA 94107, USA
 Datenschutzrichtlinie: [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/)
 
+Diese Website (meerweb.ch) wird auf Cloudflare Pages betrieben. Cloudflare liefert statische Inhalte über ein weltweites Netzwerk aus; dabei können technische Zugriffsdaten (etwa IP-Adressen) auch ausserhalb der Schweiz verarbeitet werden. Inhalte aus Anfragen über das Kontaktformular werden nicht bei Cloudflare gespeichert. Für Kundenprojekte mit besonderem Bedarf — insbesondere politische Websites und Websites gemeinnütziger Organisationen — biete ich alternativ Hosting bei einem Schweizer Anbieter an (Cyon oder Infomaniak, nach Wahl — Rechenzentrum in der Schweiz). Auf Wunsch kann jede Meerweb-Website ausschliesslich auf Schweizer Infrastruktur betrieben werden.
+
 ---
 
 ## Ihre Rechte
@@ -66,4 +70,4 @@ Zur Wahrnehmung Ihrer Rechte wenden Sie sich an: [hallo@meerweb.ch](mailto:hallo
 
 Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Es gilt jeweils die auf dieser Seite publizierte Version.
 
-*Stand: April 2026*
+Stand: August 2026

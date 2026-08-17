@@ -1,0 +1,59 @@
+{{ define "main" }}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="label">{{ .Params.label }}</p>
+    <h1>{{ .Params.title }}</h1>
+    <p class="page-hero__sub">{{ .Params.preis }} einmalig — {{ .Params.intro }}</p>
+  </div>
+</section>
+
+<section class="section section--subtle">
+  <div class="container">
+    <div class="split">
+      <div class="split__text">
+        <p class="label">Ausgangslage</p>
+        <h2>{{ (.Params.probleme).titel }}</h2>
+        <ul class="checkmark-list checkmark-list--neutral">
+          {{ range (.Params.probleme).punkte }}
+          <li>{{ .item }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="split__list">
+        <p class="label">Im Paket enthalten</p>
+        <ul class="checkmark-list">
+          {{ range (.Params.loesungen).punkte }}
+          <li>{{ .item }}</li>
+          {{ end }}
+        </ul>
+        <p style="margin-top: var(--space-sm);"><a href="{{ .Params.angebot_link }}">Vollständiger Leistungsumfang im Angebot ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="label">FAQ</p>
+    <h2>Häufige Fragen</h2>
+    <div class="faq">
+      {{ range .Params.faq }}
+      <details class="faq__item">
+        <summary class="faq__frage">{{ .frage }}</summary>
+        <p class="faq__antwort">{{ .antwort }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container cta-section__inner">
+    <h2>{{ (.Params.cta).titel }}</h2>
+    <p>{{ (.Params.cta).text }}</p>
+    <a href="/kontakt/" class="btn btn--primary">{{ (.Params.cta).label | default "Kontakt aufnehmen" }}</a>
+  </div>
+</section>
+
+{{ end }}

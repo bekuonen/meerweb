@@ -4,12 +4,14 @@
   <div class="container">
     <p class="label">Referenzen</p>
     <h1>Projekte</h1>
-    <p class="page-hero__sub">Echte Auftritte für echte Unternehmen.</p>
+    <p class="page-hero__sub">Projekte und Beispiele — transparent gekennzeichnet.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
+    <p class="prose">Hier zeige ich, wie ich arbeite: Kundenaufträge, eigene Projekte und ein fiktives Beispiel. Jede Karte ist entsprechend gekennzeichnet — was ein Auftrag war, steht dabei, was Demonstration ist, ebenso.</p>
+    <!-- [BERNHARD: hier realen NPO- oder Politik-Case einfügen, sobald verfügbar — inkl. Kurzzitat der Kundin] -->
     <div class="ref-grid ref-grid--full">
       {{ range (where .Site.RegularPages "Section" "referenzen") }}
       <div class="ref-card">
@@ -21,10 +23,11 @@
           <div class="ref-card__img ref-card__img--placeholder"></div>
         {{ end }}
         <div class="ref-card__body">
-          {{ if .Params.beispiel }}<span class="badge">Beispielprojekt</span>{{ end }}
+          {{ partial "ref-badge.html" . }}
           <h2>{{ .Title }}</h2>
-          <p class="ref-card__meta">{{ .Params.branche }} · {{ .Params.paket }}</p>
-          <p>{{ .Params.description }}</p>
+          <p class="ref-card__meta">{{ .Params.branche }}{{ with .Params.paket }} · {{ . }}{{ end }}{{ with .Params.jahr }} · {{ . }}{{ end }}</p>
+          {{ with .Params.auftrag }}<p><strong>Auftrag:</strong> {{ . }}</p>{{ end }}
+          {{ with .Params.ergebnis }}<p><strong>Ergebnis:</strong> {{ . }}</p>{{ end }}
           {{ if .Params.website }}
             <p><a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer">Website ansehen ↗</a></p>
           {{ end }}

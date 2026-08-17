@@ -317,6 +317,16 @@ a:hover { color: var(--color-accent-dark); }
 
 /* Horizontale Cards (Angebot-Seite) */
 .cards--full { grid-template-columns: 1fr; }
+.cards--four { grid-template-columns: repeat(2, 1fr); }
+.betreuung-block {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  font-size: var(--size-sm);
+}
+.betreuung-block p { max-width: none; }
 .card--horizontal {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -336,6 +346,39 @@ a:hover { color: var(--color-accent-dark); }
 .table td:first-child { font-family: var(--font-heading); font-size: var(--size-base); color: var(--color-text); }
 .table td:last-child, .table th:last-child { white-space: nowrap; font-weight: 600; color: var(--color-text); }
 .table tr:last-child td { border-bottom: none; }
+
+/* ── ZIELGRUPPEN-SEITEN ── */
+.checkmark-list--neutral li::before { content: "—"; color: var(--color-text-muted); }
+
+/* ── PORTRÄT ── */
+.portrait__inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+.portrait__img img,
+.portrait__placeholder {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+.portrait__placeholder {
+  aspect-ratio: 4/5;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-bg-subtle),
+    var(--color-bg-subtle) 10px,
+    var(--color-bg) 10px,
+    var(--color-bg) 20px
+  );
+}
+.portrait__kontakt {
+  margin-top: var(--space-sm);
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .portrait__inner { grid-template-columns: 1fr; gap: var(--space-md); }
+}
 
 /* ── REFERENZEN ── */
 .ref-grid {
@@ -393,6 +436,19 @@ a:hover { color: var(--color-accent-dark); }
   border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+.badge--kunde {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+.badge--eigen {
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+}
+.badge--fiktiv {
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text-muted);
 }
 
 /* ── PROZESS ── */

@@ -4,7 +4,7 @@
   <div class="container">
     <p class="label">Kontakt</p>
     <h1>{{ .Params.title | default "Schreib mir." }}</h1>
-    <p class="page-hero__sub">{{ .Params.text | default "Kurze Nachricht genügt. Ich melde mich in der Regel innerhalb von 24 Stunden." }}</p>
+    <p class="page-hero__sub">{{ .Params.text | default "Kurze Nachricht genügt. Antwort innerhalb von 24 Stunden." }}</p>
   </div>
 </section>
 
@@ -16,7 +16,8 @@
       <a href="mailto:{{ .Params.email | default .Site.Params.email }}" class="kontakt-email">
         {{ .Params.email | default .Site.Params.email }}
       </a>
-      <p class="kontakt-note">Kein Telefon. Keine Terminbuchung. Eine E-Mail reicht.</p>
+      <p class="kontakt-note">E-Mail ist der beste Weg zum Erstkontakt: <a href="mailto:hallo@meerweb.ch">hallo@meerweb.ch</a> — Antwort innerhalb von 24 Stunden.</p>
+      <p class="kontakt-note">Wenn du lieber kurz sprichst, ist ein Telefon-Erstgespräch möglich, Dienstag und Donnerstag von 9 bis 12 Uhr{{ with .Params.telefon }}: {{ . }}{{ else }} — Terminvereinbarung per E-Mail{{ end }}.</p>
     </div>
 
     <form class="kontakt-form" action="https://api.web3forms.com/submit" method="POST">

@@ -1,0 +1,111 @@
+/* Meerweb PDF-Brief — Stil analog Website (main.css) */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Space+Grotesk:wght@400;500&display=swap');
+
+@page {
+  size: A4;
+  margin: 22mm 20mm 24mm 20mm;
+  @bottom-left { content: element(footer); }
+}
+
+:root {
+  --bg:         #F8F7F4;
+  --bg-subtle:  #E2E0DB;
+  --text:       #1A1A1A;
+  --text-muted: #6B6860;
+  --accent:     #F4622A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: #1A1A1A;
+}
+
+h1, h2 {
+  font-family: 'Syne', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.kopf {
+  background: #F8F7F4;
+  border-bottom: 2px solid #F4622A;
+  padding: 8mm 7mm 6mm 7mm;
+  margin-bottom: 8mm;
+}
+.kopf .label {
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6B6860;
+  margin-bottom: 2mm;
+}
+.kopf h1 { font-size: 20pt; margin-bottom: 2mm; }
+.kopf .preis { font-size: 13pt; font-weight: 500; }
+.kopf .preis span { color: #6B6860; font-size: 9pt; }
+
+section { margin-bottom: 7mm; }
+section h2 {
+  font-size: 12pt;
+  margin-bottom: 3mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid #E2E0DB;
+}
+
+ul { list-style: none; }
+ul li {
+  padding-left: 5mm;
+  position: relative;
+  margin-bottom: 1.2mm;
+}
+ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #F4622A;
+  font-weight: 700;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+th {
+  text-align: left;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6B6860;
+  border-bottom: 1px solid #1A1A1A;
+  padding: 1.5mm 2mm;
+}
+td { border-bottom: 1px solid #E2E0DB; padding: 1.8mm 2mm; vertical-align: top; }
+
+.ablauf { display: block; }
+.ablauf .schritt { margin-bottom: 2.5mm; padding-left: 10mm; position: relative; }
+.ablauf .nr {
+  position: absolute;
+  left: 0;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: #F4622A;
+}
+.ablauf .titel { font-weight: 500; }
+
+.kontakt {
+  background: #F8F7F4;
+  padding: 5mm 7mm;
+  margin-top: 2mm;
+}
+.kontakt p { margin-bottom: 1mm; }
+
+.hinweis { font-size: 8.5pt; color: #6B6860; margin-top: 2mm; }
+
+footer {
+  position: running(footer);
+  font-size: 8pt;
+  color: #6B6860;
+  border-top: 1px solid #E2E0DB;
+  padding-top: 2mm;
+  width: 170mm;
+}

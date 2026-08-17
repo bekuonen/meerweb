@@ -1,0 +1,6 @@
+{{ $kat := .Params.kategorie }}
+{{ if eq $kat "kundenauftrag" }}<span class="badge badge--kunde">Kundenauftrag</span>
+{{ else if eq $kat "eigenes" }}<span class="badge badge--eigen">Eigenes Projekt von Meerweb</span>
+{{ else if eq $kat "fiktiv" }}<span class="badge badge--fiktiv">Fiktives Beispielprojekt — KI-generiert zu Demonstrationszwecken</span>
+{{ else if .Params.beispiel }}<span class="badge">Beispielprojekt</span>
+{{ end }}

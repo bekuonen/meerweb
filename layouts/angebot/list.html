@@ -46,7 +46,7 @@
   <div class="container">
     <div class="cards cards--full">
       {{ range .Params.pakete }}
-      <div class="card card--horizontal">
+      <div class="card card--horizontal"{{ with .anker }} id="{{ . }}"{{ end }}>
         <div class="card__head">
           <p class="card__label">Paket{{ with .label }} {{ . }}{{ end }}</p>
           <h2 class="card__title">{{ .name }}</h2>
@@ -62,6 +62,7 @@
           </ul>
           {{ if .nachtext }}<p>{{ .nachtext }}</p>{{ end }}
           {{ if .erweiterung }}<p class="card__note">{{ .erweiterung }}</p>{{ end }}
+          {{ if .pdf }}<p><a href="{{ .pdf }}">Als PDF für Vorstand/Komitee herunterladen ↓</a></p>{{ end }}
         </div>
       </div>
       {{ end }}
@@ -71,31 +72,37 @@
   </div>
 </section>
 
-<!-- POLITISCHES PROFIL (Einstieg) -->
-{{ with .Params.polit_profil }}
-<section class="section">
+<!-- PAKET POLITIK: ZWEI STUFEN -->
+{{ with .Params.politik }}
+<section class="section" id="politik">
   <div class="container">
-    <p class="label">{{ .label | default "Einstieg" }}</p>
+    <p class="label">{{ .label | default "Paket Politik" }}</p>
     <h2>{{ .titel }}</h2>
+    {{ if .intro }}<p style="margin-top: var(--space-sm);">{{ .intro }}</p>{{ end }}
     <div class="cards cards--full" style="margin-top: var(--space-md);">
-      <div class="card card--horizontal">
+      {{ range .varianten }}
+      <div class="card card--horizontal"{{ with .anker }} id="{{ . }}"{{ end }}>
         <div class="card__head">
-          <p class="card__label">Paket Politik</p>
+          <p class="card__label">{{ .stufe }}</p>
           <h3 class="card__title">{{ .name }}</h3>
           <p class="card__price">{{ .preis }} <span>{{ .preishinweis }}</span></p>
         </div>
         <div class="card__body">
+          {{ if .tagline }}<p><strong>{{ .tagline }}</strong></p>{{ end }}
           <p>{{ .beschreibung }}</p>
           <ul class="card__list">
             {{ range .leistungen }}
             <li>{{ .item }}</li>
             {{ end }}
           </ul>
+          {{ if .nachtext }}<p>{{ .nachtext }}</p>{{ end }}
           {{ if .erweiterung }}<p class="card__note">{{ .erweiterung }}</p>{{ end }}
+          {{ if .pdf }}<p><a href="{{ .pdf }}">Als PDF für Vorstand/Komitee herunterladen ↓</a></p>{{ end }}
         </div>
       </div>
+      {{ end }}
     </div>
-    {{ if .abgrenzung }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .abgrenzung }}</p>{{ end }}
+    {{ if .hinweis }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .hinweis }}</p>{{ end }}
   </div>
 </section>
 {{ end }}
@@ -119,7 +126,7 @@
 
 <!-- BETREUUNG NACH DEM START -->
 {{ if .Params.betreuung }}
-<section class="section section--subtle">
+<section class="section section--subtle" id="betreuung">
   <div class="container">
     <p class="label">Laufend</p>
     <h2>Betreuung nach dem Start</h2>
@@ -162,6 +169,36 @@
     </div>
     {{ end }}
     {{ if .nachtext }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .nachtext }}</p>{{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- RICHTPREISE -->
+{{ with .Params.richtpreise }}
+<section class="section section--subtle">
+  <div class="container">
+    <p class="label">Richtpreise</p>
+    <h2>{{ .titel }}</h2>
+    {{ if .intro }}<p style="margin-top: var(--space-sm);">{{ .intro }}</p>{{ end }}
+    <div class="table-wrap" style="margin-top: var(--space-sm);">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Zusatzleistung</th>
+            <th>Richtpreis (indikativ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .posten }}
+          <tr>
+            <td>{{ .leistung }}</td>
+            <td>{{ .preis }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    {{ if .hinweis }}<p class="card__note" style="margin-top: var(--space-sm);">{{ .hinweis }}</p>{{ end }}
   </div>
 </section>
 {{ end }}

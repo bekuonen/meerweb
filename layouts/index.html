@@ -10,6 +10,28 @@
   </div>
 </section>
 
+<!-- PORTRÄT -->
+{{ with .Params.portrait }}
+<section class="section portrait">
+  <div class="container portrait__inner">
+    <div class="portrait__img">
+      {{ if fileExists "static/img/bernhard-portrait.jpg" }}
+        <img src="{{ .bild }}" alt="Bernhard Kuonen, Inhaber von Meerweb">
+      {{ else }}
+        <!-- [BERNHARD: Porträtfoto liefern, quer oder hochkant, min. 1200 px lange Kante, ruhige Bildsprache — Datei: static/img/bernhard-portrait.jpg] -->
+        <div class="portrait__placeholder" role="img" aria-label="Porträtfoto folgt"></div>
+      {{ end }}
+    </div>
+    <div class="portrait__text">
+      <p class="label">Wer dahintersteckt</p>
+      <h2>{{ .titel }}</h2>
+      <div class="prose">{{ .text | markdownify }}</div>
+      <p class="portrait__kontakt">{{ .kontakt }}</p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 <!-- PROBLEM / LÖSUNG -->
 <section class="section section--subtle">
   <div class="container">
@@ -32,50 +54,28 @@
   </div>
 </section>
 
-<!-- PAKETE ÜBERSICHT -->
+<!-- ANGEBOT: VIER ZIELGRUPPEN -->
 <section class="section">
   <div class="container">
     <p class="label">{{ (.Params.pakete).title | default "Angebot" }}</p>
-    <h2>{{ (.Params.pakete).sub | default "Klare Pakete. Feste Preise." }}</h2>
-    <div class="cards">
-
+    <h2>{{ (.Params.pakete).sub | default "Vier Angebote — für vier klare Situationen." }}</h2>
+    <div class="cards cards--four">
+      {{ range (.Params.pakete).karten }}
       <div class="card">
-        <p class="card__label">Paket</p>
-        <h3 class="card__title">Auftritt</h3>
-        <p class="card__price">CHF 2'200 <span>einmalig</span></p>
-        <ul class="card__list">
-          <li>bis 5 Seiten</li>
-          <li>Texte & Setup</li>
-          <li>Einführung inklusive</li>
-        </ul>
-        <a href="/angebot/" class="btn btn--outline">Details</a>
+        <p class="card__label">Angebot</p>
+        <h3 class="card__title">{{ .name }}</h3>
+        <p class="card__price">{{ .preis }} <span>einmalig</span></p>
+        <p>{{ .text }}</p>
+        <a href="{{ .link }}" class="btn btn--outline">Details</a>
       </div>
-
-      <div class="card card--featured">        <span class="badge badge--featured">Empfohlen</span>
-        <p class="card__label">Paket</p>
-        <h3 class="card__title">Präsenz</h3>
-        <p class="card__price">CHF 3'300 <span>einmalig</span></p>
-        <ul class="card__list">
-          <li>bis 10 Seiten</li>
-          <li>Texte & Setup</li>
-          <li>Einführung inklusive</li>
-        </ul>
-        <a href="/angebot/" class="btn btn--primary">Details</a>
-      </div>
-
-      <div class="card">
-        <p class="card__label">Laufend</p>
-        <h3 class="card__title">Betreuung</h3>
-        <p class="card__price">ab CHF 120 <span>/ Monat</span></p>
-        <ul class="card__list">
-          <li>Anpassungen & Updates</li>
-          <li>Feste Ansprechperson</li>
-          <li>Monatlich kündbar</li>
-        </ul>
-        <a href="/angebot/" class="btn btn--outline">Details</a>
-      </div>
-
+      {{ end }}
     </div>
+
+    {{ with .Params.betreuung_block }}
+    <div class="betreuung-block">
+      <p>{{ .text }} Details unter <a href="{{ .link }}">{{ .label }}</a>.</p>
+    </div>
+    {{ end }}
   </div>
 </section>
 
@@ -83,7 +83,7 @@
 <section class="section section--subtle">
   <div class="container">
     <p class="label">Referenzen</p>
-    <h2>Beispielprojekte</h2>
+    <h2>Projekte und Beispiele</h2>
     <div class="ref-grid">
       {{ range (where .Site.RegularPages "Section" "referenzen") }}
       <div class="ref-card">
@@ -95,9 +95,9 @@
           <div class="ref-card__img ref-card__img--placeholder"></div>
         {{ end }}
         <div class="ref-card__body">
-          {{ if .Params.beispiel }}<span class="badge">Beispielprojekt</span>{{ end }}
+          {{ partial "ref-badge.html" . }}
           <h3>{{ .Title }}</h3>
-          <p class="ref-card__meta">{{ .Params.branche }} · {{ .Params.paket }}</p>
+          <p class="ref-card__meta">{{ .Params.branche }}{{ with .Params.paket }} · {{ . }}{{ end }}</p>
           <p>{{ .Params.description }}</p>
           {{ if .Params.website }}
             <p><a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer">Website ansehen ↗</a></p>

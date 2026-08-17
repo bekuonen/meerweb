@@ -14,8 +14,34 @@ vorteile:
   - item: "Echte Fotos statt Stockbilder"
 pakete:
   title: "Was ich anbiete"
-  sub: "Zwei klare Pakete. Keine versteckten Kosten."
-ueber:
-  title: "Wer dahintersteckt"
-  text: "Ich bin Bernhard, Webentwickler aus Luzern. Meerweb ist mein persönliches Angebot für alle, die eine verlässliche Website brauchen — ohne Agenturaufwand und ohne Überraschungen auf der Rechnung. Ich arbeite allein, bewusst. Das bedeutet: kurze Wege, direkte Kommunikation, und du weisst immer, mit wem du sprichst."
+  sub: "Vier Angebote — für vier klare Situationen."
+  karten:
+    - name: "Persönliche Website"
+      preis: "CHF 2'200"
+      text: "Für Coaches, Beraterinnen, Autorinnen und alle mit einem persönlichen oder beruflichen Projekt. Persönlichkeit zeigen, Vertrauen schaffen — auf bis zu fünf Seiten."
+      link: "/persoenlich/"
+    - name: "Website für NPO und NGO"
+      preis: "CHF 3'300"
+      text: "Für Vereine, Stiftungen und Initiativen. Auftrag, Trägerschaft und Wirkung sichtbar machen — inkl. Barrierefreiheit und drei Monaten Unterstützung. 10 % Rabatt für gemeinnützige Projekte."
+      link: "/npo/"
+    - name: "Website für Kleinbetriebe"
+      preis: "CHF 3'300"
+      text: "Für Handwerk, Praxis und lokales Gewerbe. Leistungen erklären, Kundschaft aus der Region erreichen — inkl. Grundlagen für lokale Auffindbarkeit."
+      link: "/kleinbetrieb/"
+    - name: "Politische Website"
+      preis: "CHF 4'500"
+      text: "Für Kandidaturen, Parlamente und Exekutiven. Fünf Themen, zehn Positionen, bis zu zehn Belege — barrierearm nach WCAG 2.2 AA, ohne Tracker, Hosting Schweiz."
+      link: "/politik/"
+betreuung_block:
+  text: "Wenn du langfristige Begleitung möchtest — Redaktion, Aktualisierung, kleinere Erweiterungen — biete ich eine monatliche Betreuung ab CHF 75. Monatlich kündbar."
+  link: "/angebot/#betreuung"
+  label: "Angebot → Betreuung"
+portrait:
+  titel: "Ich bin Bernhard Kuonen."
+  bild: "/img/bernhard-portrait.jpg"
+  text: |
+    Meerweb ist mein Angebot — von der ersten Notiz bis zum Launch begleitet dich dieselbe Person. Bislang habe ich zehn Website-Projekte begleitet.
+
+    Ansässig in Luzern und im Oberwallis (Münster VS).
+  kontakt: "Kontakt: hallo@meerweb.ch — Antwort innerhalb von 24 Stunden."
 ---

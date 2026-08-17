@@ -26,12 +26,35 @@ collections:
             fields:
               - { label: "Titel", name: "title", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
-          - label: "Pakete (Übersicht)"
+          - label: "Angebots-Karten"
             name: "pakete"
             widget: "object"
             fields:
               - { label: "Titel", name: "title", widget: "string" }
               - { label: "Untertitel", name: "sub", widget: "string" }
+              - label: "Karten"
+                name: "karten"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Preis", name: "preis", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+                  - { label: "Link", name: "link", widget: "string" }
+          - label: "Betreuungs-Hinweis"
+            name: "betreuung_block"
+            widget: "object"
+            fields:
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Linktext", name: "label", widget: "string" }
+          - label: "Porträt"
+            name: "portrait"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Bild", name: "bild", widget: "image", required: false }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Kontaktzeile", name: "kontakt", widget: "string" }
 
   - name: "angebot"
     label: "Angebot"
@@ -77,9 +100,18 @@ collections:
       - { label: "Kunde", name: "title", widget: "string" }
       - { label: "Branche", name: "branche", widget: "string" }
       - { label: "Paket", name: "paket", widget: "string" }
+      - label: "Kategorie"
+        name: "kategorie"
+        widget: "select"
+        options:
+          - { label: "Kundenauftrag", value: "kundenauftrag" }
+          - { label: "Eigenes Projekt von Meerweb", value: "eigenes" }
+          - { label: "Fiktives Beispielprojekt (KI-generiert)", value: "fiktiv" }
+      - { label: "Jahr", name: "jahr", widget: "string", required: false }
+      - { label: "Auftrag (ein Satz)", name: "auftrag", widget: "text" }
+      - { label: "Ergebnis (ein Satz)", name: "ergebnis", widget: "text" }
       - { label: "Beschreibung", name: "description", widget: "text" }
       - { label: "Bild", name: "bild", widget: "image", required: false }
-      - { label: "Beispielprojekt", name: "beispiel", widget: "boolean", default: false }
       - { label: "Reihenfolge", name: "weight", widget: "number", default: 1 }
 
   - name: "kontakt"
@@ -92,3 +124,4 @@ collections:
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Text", name: "text", widget: "text" }
           - { label: "E-Mail", name: "email", widget: "string" }
+          - { label: "Telefon (Erstgespräch)", name: "telefon", widget: "string", required: false }
