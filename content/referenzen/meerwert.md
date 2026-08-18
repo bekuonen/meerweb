@@ -9,5 +9,5 @@ ergebnis: "Eine persönliche Website mit Fokus auf Vertrauen, Klarheit und direk
 description: "Biografie- und Laufbahnberatung. Website mit Fokus auf Vertrauen, Klarheit und persönlicher Ansprache."
 website: "https://meerwert.ch"
 bild: "/img/referenzen/meerwert.jpg"
-weight: 6
+weight: 7
 ---

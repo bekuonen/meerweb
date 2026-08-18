@@ -9,5 +9,5 @@ ergebnis: "Ein Auftritt mit Galerien, Journal und persönlichem Profil, umgesetz
 description: "Portfolio-Website für Naturfotografie. Aufbau mit Astro und Sanity CMS — Galerien, Journal und persönliches Profil, redaktionell selbständig pflegbar."
 website: "https://lichtspur-natur.pages.dev"
 bild: "/img/referenzen/lichtspur-natur.jpg"
-weight: 4
+weight: 5
 ---

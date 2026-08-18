@@ -9,5 +9,5 @@ ergebnis: "Eine mehrsprachig angelegte Konzeptplattform, derzeit in der Vernehml
 description: "Konzeptplattform, die Engagierte im Bereich Patient and Public Involvement (PPI) in der Gesundheitsforschung vernetzen soll — mehrsprachig angelegt, aktuell in der Vernehmlassungsphase."
 website: "https://www.ppihub.ch"
 bild: "/img/referenzen/ppihub.jpg"
-weight: 2
+weight: 3
 ---

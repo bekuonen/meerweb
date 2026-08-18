@@ -8,5 +8,5 @@ ergebnis: "Diese Website: statisch mit Hugo gebaut, ohne Tracker, mit klarer Str
 description: "Die Website von Meerweb selbst — Konzept, Gestaltung, Texte und technische Umsetzung aus einer Hand."
 website: "https://meerweb.ch"
 bild: "/img/referenzen/meerweb.jpg"
-weight: 5
+weight: 6
 ---
